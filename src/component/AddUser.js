@@ -63,13 +63,14 @@ class AddUser extends Component {
 
     render() {
         const {visible,name,salary,department} = this.state;
+
         return (
         
         <UserConsumer>
             {
                 value => {
                     const {dispatch} = value ;
-
+                    console.log(value)
                     return (
                         <div className="col-md-8 mb-4">
             

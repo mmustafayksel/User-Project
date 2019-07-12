@@ -1,54 +1,45 @@
 import React, { Component } from 'react'
-import User from "./User"
-import UserConsumer from "../context"
-
+import User from './User'
+import UserConsumer from '../context'
 
 export default class Users extends Component {
-    render() {
-        
-        return(
+  render () {
+    return (
 
-            <UserConsumer>
+      <UserConsumer>
 
-            {
-                value =>
-                {
-                    const {users} = value;
-                    return (
-                        <div>
-                            {
+        {
+                value => {
+                  const {users} = value
+                  return (
+                    <div>
+                      {
 
                             users.map(user => {
+                              return (
 
-                                return(
+                                <User
 
-                                    <User
-                                    
-                                        key = {user.id}
-                                        id = {user.id}
-                                        name = {user.name}
-                                        salary = {user.salary}
-                                        department = {user.department}
-                                        
-                                    
+                                  key={user.id}
+                                  id={user.id}
+                                  name={user.name}
+                                  salary={user.salary}
+                                  department={user.department}
+
                                     />
 
-                                )
-
-                                })
+                              )
+                            })
 
                             }
-                                    
-                        </div>
-                    )   
 
+                    </div>
+                  )
                 }
             }
 
-            </UserConsumer>
+      </UserConsumer>
 
-        )
-        
-       
-    }
+    )
+  }
 }

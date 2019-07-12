@@ -15,6 +15,14 @@ const reducer = (state,action) => {
         ...state,
         users : [...state.users,action.payload]
       }
+      case 'EDIT_USER':
+        const {id, salary, department} = action.payload
+        let targetPerson = state.users.find(el => el.id === id)
+        targetPerson.salary = salary
+        targetPerson.department = department
+        return {
+          ...state
+        }
     default:
       return state;
     
